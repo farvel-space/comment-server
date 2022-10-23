@@ -1,0 +1,31 @@
+{
+    "listScenes": [
+        {
+            "sceneID" : "testSceneID",
+            "listObject" : [
+                {
+                    "identifier" : "naf-TEST123",
+                    "listComments": [
+                        {
+                            "commentId" : "test",
+                            "state" : ["new", "active", "removed"],
+                            "body" : "",
+                            "attr" : ["displayName", "anonymous"]
+                        }
+                    ]
+                },
+                {
+                    "identifier" : ".Test123",
+                    "listComments": [
+                        {
+                            "commentId" : "test",
+                            "state" : ["new", "active", "removed"],
+                            "body" : "",
+                            "attr" : ["displayName", "anonymous"]
+                        }
+                    ]
+                }
+            ]
+        } 
+    ]
+}
