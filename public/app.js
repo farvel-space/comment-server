@@ -1,7 +1,7 @@
 console.log('hello world');
 const socket = io('/general');
 
-socket.on('connection', (data) => {
+socket.on('initData', (data) => {
     console.log(data);
 });
 
