@@ -1,5 +1,37 @@
 //test update
-import dataJSON from "./draft.json"
+// import dataJSON from "./draft.json"
+
+const dataJSON = {
+  "listScenes": [
+      {
+          "sceneID" : "testSceneID",
+          "listObject" : [
+              {
+                  "identifier" : "naf-TEST123",
+                  "listComments": [
+                      {
+                          "commentId" : "test",
+                          "state" : ["new", "active", "removed"],
+                          "body" : "",
+                          "attr" : ["displayName", "anonymous"]
+                      }
+                  ]
+              },
+              {
+                  "identifier" : ".Test123",
+                  "listComments": [
+                      {
+                          "commentId" : "test",
+                          "state" : ["new", "active", "removed"],
+                          "body" : "",
+                          "attr" : ["displayName", "anonymous"]
+                      }
+                  ]
+              }
+          ]
+      } 
+  ]
+}
 
 let http = require('http');
 // let https = require('https');
