@@ -17,7 +17,7 @@ window.testNewComment = (data) => {
     socket.emit('newComment', data)
 }
 
-window.testAdminEdit = (sceneURL) => {
+window.testGetData = (sceneURL) => {
     socket.emit('getData', sceneURL)
 }
 
