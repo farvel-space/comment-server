@@ -61,9 +61,9 @@ generalServer.on('connection', (socket) => {
 
     //Set up listeners
     //CREATE
-    socket.on('newComment', (comData) => {
+    socket.on('newComment', async (comData) => {
       //Insert into DB
-      const newCom = newComment(comData);
+      const newCom = await newComment(comData);
 
       //Relay to other connected users
       generalServer.emit("reflector", newCom);
@@ -79,9 +79,9 @@ generalServer.on('connection', (socket) => {
     });
 
     //UPDATE
-    socket.on('adminEdit', (comData) => {
+    socket.on('adminEdit', async (comData) => {
       //Update DB
-      const updatedCom = adminEdit(comData);
+      const updatedCom = await adminEdit(comData);
 
       //Relay to other connected users
       generalServer.emit("reflector", updatedCom)
