@@ -14,7 +14,7 @@ socket.on('reflector', (data) => {
 })
 
 window.testNewComment = (data) => {
-    socket.emit('newComment', data))
+    socket.emit('newComment', data)
 }
 
 window.testAdminEdit = (sceneURL) => {
