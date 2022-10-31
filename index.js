@@ -70,9 +70,9 @@ generalServer.on('connection', (socket) => {
     });
 
     //READ
-    socket.on('getData', (sceneURL) => {
+    socket.on('getData', async (sceneURL) => {
       //Read DB
-      const data = getData(sceneURL);
+      const data = await getData(sceneURL);
 
       //Return data to individual connection
       generalServer.to(socket.id).emit("getDataResp", data);
