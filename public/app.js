@@ -5,32 +5,22 @@ socket.on('initData', (data) => {
     console.log(data);
 });
 
-window.testNewComment = () => {
-    socket.emit('newComment', {
-        sceneID: "test",
-        identifier: "naf-TEST123",
-        comment: {
-            commentId : "test",
-            state : ["new", "active", "removed"],
-            body : "tests",
-            attr : ["displayName", "anonymous"]
-        }
-    })
+socket.on('getDataResp', (data) => {
+    console.log(data);
+})
+
+socket.on('reflector', (data) => {
+    console.log(data);
+})
+
+window.testNewComment = (data) => {
+    socket.emit('newComment', data))
 }
 
-window.testAdminEdit = () => {
-    socket.emit('newComment', {
-        sceneID: "test",
-        identifier: "naf-TEST123",
-        comment: {
-            commentId : "test",
-            state : ["new", "active", "removed"],
-            body : "tests",
-            attr : ["displayName", "anonymous"]
-        }
-    })
+window.testAdminEdit = (sceneURL) => {
+    socket.emit('getData', sceneURL)
 }
 
-window.testAdminEdit = () => {
-    socket.emit('newComment', "gimme data")
+window.testAdminEdit = (data) => {
+    socket.emit('adminEdit', data)
 }

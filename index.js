@@ -84,7 +84,7 @@ generalServer.on('connection', (socket) => {
       const updatedCom = adminEdit(comData);
 
       //Relay to other connected users
-      generalServer.emit("reflector", newCom)
+      generalServer.emit("reflector", updatedCom)
     });
 });
 
