@@ -32,6 +32,7 @@ const newComment = async (data) => {
 //Read
 const getData = async (sceneURL) => {
   //Get data by sceneURL
+  console.log('grabbing data for: ' + sceneURL)
   const readResult = await client.db("farvel").collection("comments").find({sceneURL : sceneURL})
   const results = await readResult.toArray();
   if (results) {
