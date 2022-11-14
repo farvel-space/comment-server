@@ -52,6 +52,13 @@ const adminEdit = async (data) => {
   return updateResult.value;
 };
 
+//Delete
+const adminDelete = async (data) => {
+  const delResult = await client.db("farvel").collection("comments").findOneAndDelete("farvel").collection("comments").findOneAndUpdate({commID : data.commID});
+  console.log(delResult);
+  return delResult;
+}
+
 //SOCKET SETUP
 //Initialize
 let io = require('socket.io')(server);
@@ -87,6 +94,14 @@ generalServer.on('connection', (socket) => {
 
       //Relay to other connected users
       generalServer.emit("reflector", updatedCom)
+    });
+
+    socket.on('adminDelete', async (comData) => {
+      //Update DB
+      const deletedCom = await adminDelete(comData);
+      deletedCom.deleted = true;
+      //Relay to other connected users
+      generalServer.emit("reflector", deletedCom);
     });
 });
 
