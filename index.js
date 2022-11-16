@@ -55,8 +55,8 @@ const adminEdit = async (data) => {
 //Delete
 const adminDelete = async (data) => {
   const delResult = await client.db("farvel").collection("comments").findOneAndDelete({commID : data.commID});
-  console.log(delResult);
-  return delResult;
+  console.log(delResult.value);
+  return delResult.value;
 }
 
 //SOCKET SETUP
