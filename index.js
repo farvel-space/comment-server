@@ -54,7 +54,7 @@ const adminEdit = async (data) => {
 
 //Delete
 const adminDelete = async (data) => {
-  const delResult = await client.db("farvel").collection("comments").findOneAndDelete("farvel").collection("comments").findOneAndUpdate({commID : data.commID});
+  const delResult = await client.db("farvel").collection("comments").findOneAndDelete({commID : data.commID});
   console.log(delResult);
   return delResult;
 }
