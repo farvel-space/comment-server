@@ -48,7 +48,7 @@ const adminEdit = async (data) => {
   console.log(data);
   delete data._id;
   //Write DB{sceneID: data.sceneURL}, { $set : {"listComments.$[elem]": data.comment}}, { arrayFilters: [{"elem.commentID" : data.comment.commentID}], upsert: true}
-  const updateResult = await client.db("farvel").collection("comments").findOneAndUpdate({dateCreated : data.dateCreated}, {data}, {returnDocument: "after"});
+  const updateResult = await client.db("farvel").collection("comments").findOneAndUpdate({dateCreated : data.dateCreated}, {$set: data}, {returnDocument: "after"});
   console.log(updateResult);
   //console.log("updated " + updateResult.modifiedCount + " documents")
   return updateResult.value;
